@@ -70,16 +70,16 @@ var gameOn = {
     console.log(this.random);
     gameOn.progress_bar();
   },
-
+  //PROGRESS BAR ANIMATION
   progress_bar: function() {
     if (gameOn.random>50) {
-      bar = parseInt(100-((Math.abs(gameOn.random - gameOn.initNum)/Math.abs(gameOn.random-0)) * 100));
+      pBar = parseInt(100-((Math.abs(gameOn.random - gameOn.initNum)/Math.abs(gameOn.random-0)) * 100));
     }
     else if (gameOn.random < 50)  {
-      bar = parseInt(100-((Math.abs(gameOn.random - gameOn.initNum)/Math.abs(gameOn.random-100)) * 100));
+      pBar = parseInt(100-((Math.abs(gameOn.random - gameOn.initNum)/Math.abs(gameOn.random-100)) * 100));
     }
-    var barWidth = bar*$("#container").width()/ 100;  
-      $("#progress_bar").animate({width:barWidth},700).html(bar + "%");
+    var barWidth = pBar*$("#container").width()/ 100;  
+      $("#progress_bar").animate({width:barWidth},700).html(pBar + "%");
   }
 
 }
