@@ -1,0 +1,83 @@
+/* Header */
+header{
+  text-align: center;
+}
+.logo{
+  font-family: 'Droid Serif', serif;
+  color: #6599FF;
+}
+.logo_img{
+  height: 40px;
+  margin-bottom: -30px;
+}
+.logo_bttm{
+  margin: -20px 0 0 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+form{
+  color: #fff;
+  background: #097054;
+  width: 50%;
+  margin: 0 auto 0;
+  border-radius: 5px;
+  text-align: center;
+}
+h3{
+  background: #FF9900;
+  position: relative;
+  line-height: 40px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+label{
+  font-size: 25px;
+  font-family: 'Ubuntu', sans-serif;
+}
+input[type="number"]{
+  border: none;
+  width: 50%;
+  height: 30px;
+}
+input[type="number"]:hover{
+  border: none;
+  box-shadow: 0 2px 4px 2px #6599FF;
+}
+button{
+  padding: 10px 30px;
+  margin: 15px 8px 15px 5px;
+}
+button:hover{
+  color: #FF9900;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 2px #6599FF;
+}
+/* Diplay Status */
+#demo{
+  background: #FFDE00;
+  width:100%;
+  font-size: 30px;
+  margin-bottom: 50em;
+  color: #003366;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+/*Animation Bar */
+#container {
+  text-align: center;
+  height:50px;
+  font-size: 20px;
+  width: 400px;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+#progress_bar {
+  color: #000;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  height:40px;
+  background: url(../img/abs.jpg) repeat-x;
+  font-size: 18px;
+  width:0px;
+  margin: 20px auto 0;
+  border-radius: 5px;
+}

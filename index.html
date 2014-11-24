@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hot Or Cold</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:500|Droid+Serif:700|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+    <body>
+      <header>
+        <img src="img/blueflame.png" alt="logo image" class="logo_img">
+        <h1 class="logo">Hot or Cold</h2>
+          <p class="logo_bttm">You are Cold, Then You are Hot!</p>
+      </header>
+      <form id="buildpage">
+        <h3>Can you guess the hidden number?</h3>
+        <label for="enter_number"> Enter Number: </label>
+        <p>
+          <input type="number" id="enter_number" name="enter_number" maxlength="3" autofocus required>
+          <br>
+          <button id="submit" type="submit" value="Take a Guess">Take a guess</button>
+          <button id="reset" class="turn_off">Play again</button>
+        </p>
+        <br>
+        <span id="count"></span>
+        <span id="demo">Keep Your Concentration (WWND)</span>
+      </form>
+      <div id="container">
+        <div id="progress_bar">
+        </div>
+      </div>
+      <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+      <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>
