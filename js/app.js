@@ -14,14 +14,13 @@ var gameOn = {
    //Prevent browser default onclick behaviour
    gameOn.guess.addEventListener("click", function (event) {
       event.preventDefault();
-      console.log("Submit GUess");
       gameOn.play();
    });
 
   // Bind a click of the reset button to browser reload
   gameOn.reset.addEventListener("click", function (event) {
-      event.preventDefault();
-      location.reload();
+    event.preventDefault();
+      gameOn.resetGame();
    });
 
   // Bind enter key to the gameplay object function for browsers that don't always interpret an enter press as a form submission.
@@ -53,7 +52,7 @@ var gameOn = {
   //GAME CONFIGURATION
   play: function(userInput) {
    
-    var userInput = parseInt(document.getElementById('enter_number').value, 10);
+    userInput = parseInt(document.getElementById('enter_number').value, 10);
     if(!gameOn.numValidate(userInput)){
       return;
     }
@@ -70,8 +69,18 @@ var gameOn = {
     console.log(this.random);
     gameOn.progress_bar();
   },
+
+  //PLAY AGAIN (RESET)
+  resetGame: function (){
+            this.random = Math.round(Math.random() * 100);
+            this.userInput.value = " ";
+            this.inputBox.value  = " ";
+            document.getElementById("demo").innerHTML = "Let's Go....";
+    },
+
   //PROGRESS BAR ANIMATION
   progress_bar: function() {
+    var pBar;
     if (this.random>50) {
       pBar = parseInt(100-((Math.abs(this.random - this.initNum)/Math.abs(this.random-0)) * 100));
     }
@@ -82,7 +91,7 @@ var gameOn = {
       $("#progress_bar").animate({width:barWidth},700).html(pBar + "%");
   }
 
-}
+};
 
                     
 $(document).ready(gameOn.initialize);
