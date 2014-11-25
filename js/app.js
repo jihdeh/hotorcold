@@ -53,7 +53,7 @@ var gameOn = {
   //GAME CONFIGURATION
   play: function(userInput) {
    
-    var userInput = parseInt(document.getElementById('enter_number').value, 10);
+    userInput = parseInt(document.getElementById('enter_number').value, 10);
     if(!gameOn.numValidate(userInput)){
       return;
     }
@@ -72,6 +72,7 @@ var gameOn = {
   },
   //PROGRESS BAR ANIMATION
   progress_bar: function() {
+    var pBar;
     if (gameOn.random>50) {
       pBar = parseInt(100-((Math.abs(gameOn.random - gameOn.initNum)/Math.abs(gameOn.random-0)) * 100));
     }
@@ -82,7 +83,7 @@ var gameOn = {
       $("#progress_bar").animate({width:barWidth},700).html(pBar + "%");
   }
 
-}
+};
 
                     
 $(document).ready(gameOn.initialize);
