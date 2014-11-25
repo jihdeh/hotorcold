@@ -53,17 +53,17 @@ var gameOn = {
   //GAME CONFIGURATION
   play: function(userInput) {
    
-    userInput = parseInt(document.getElementById('enter_number').value, 10);
+    var userInput = parseInt(document.getElementById('enter_number').value, 10);
     if(!gameOn.numValidate(userInput)){
       return;
     }
-    if(userInput == gameOn.random){
+    if(userInput == this.random){
       document.getElementById("demo").innerHTML = "You { GOT IT } right.";
     }
-    else if(Math.abs(gameOn.random - userInput) > Math.abs(gameOn.random - this.initNum)){
+    else if(Math.abs(this.random - userInput) > Math.abs(this.random - this.initNum)){
       document.getElementById("demo").innerHTML = "Your getting cold! Do you feel comfortable?";
     }
-    else if(Math.abs(gameOn.random - userInput) < Math.abs(gameOn.random - this.initNum)){
+    else if(Math.abs(this.random - userInput) < Math.abs(this.random - this.initNum)){
       document.getElementById("demo").innerHTML = "Great!! Let's warm this place up a little more";
     }
     this.initNum = userInput;
@@ -72,18 +72,17 @@ var gameOn = {
   },
   //PROGRESS BAR ANIMATION
   progress_bar: function() {
-    var pBar;
-    if (gameOn.random>50) {
-      pBar = parseInt(100-((Math.abs(gameOn.random - gameOn.initNum)/Math.abs(gameOn.random-0)) * 100));
+    if (this.random>50) {
+      pBar = parseInt(100-((Math.abs(this.random - this.initNum)/Math.abs(this.random-0)) * 100));
     }
-    else if (gameOn.random < 50)  {
-      pBar = parseInt(100-((Math.abs(gameOn.random - gameOn.initNum)/Math.abs(gameOn.random-100)) * 100));
+    else if (this.random < 50)  {
+      pBar = parseInt(100-((Math.abs(this.random - this.initNum)/Math.abs(this.random-100)) * 100));
     }
     var barWidth = pBar*$("#container").width()/ 100;  
       $("#progress_bar").animate({width:barWidth},700).html(pBar + "%");
   }
 
-};
+}
 
                     
 $(document).ready(gameOn.initialize);
